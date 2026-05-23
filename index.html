@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>For Toosha</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top left, rgba(255,220,235,0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255,245,210,0.15), transparent 30%),
+    linear-gradient(135deg,#0f0b14,#1a1322,#231828);
+
+    font-family:'Cormorant Garamond', serif;
+    color:white;
+}
+
+/* floating lights */
+
+.light1,
+.light2{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(100px);
+    animation:float 8s ease-in-out infinite;
+}
+
+.light1{
+    width:400px;
+    height:400px;
+    background:rgba(255,182,193,0.12);
+    top:-120px;
+    left:-100px;
+}
+
+.light2{
+    width:400px;
+    height:400px;
+    background:rgba(255,230,180,0.10);
+    bottom:-120px;
+    right:-100px;
+    animation-duration:10s;
+}
+
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(25px);}
+    100%{transform:translateY(0px);}
+}
+
+/* opening box */
+
+.open-box{
+    position:absolute;
+    width:260px;
+    height:120px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:0.4s ease;
+    box-shadow:0 0 30px rgba(0,0,0,0.35);
+
+    z-index:10;
+}
+
+.open-box:hover{
+    transform:scale(1.06);
+    background:rgba(255,255,255,0.11);
+}
+
+.open-box h2{
+    font-weight:400;
+    font-size:2rem;
+    letter-spacing:2px;
+    color:#ffe2ee;
+    font-family:'Great Vibes', cursive;
+}
+
+/* poem card */
+
+.card{
+    opacity:0;
+    pointer-events:none;
+
+    width:90%;
+    max-width:850px;
+
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.10);
+
+    border-radius:30px;
+
+    padding:60px 50px;
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:0 0 40px rgba(0,0,0,0.35);
+
+    transform:translateY(20px);
+
+    transition:1s ease;
+}
+
+.card.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+.title{
+    text-align:center;
+    font-size:4rem;
+    margin-bottom:40px;
+
+    font-family:'Great Vibes', cursive;
+    font-weight:400;
+
+    color:#ffd7e7;
+}
+
+.poem{
+    text-align:center;
+    line-height:2.2;
+    font-size:1.45rem;
+    color:#f5f5f5;
+}
+
+.poem p{
+    margin-bottom:26px;
+}
+
+.note{
+    margin-top:50px;
+
+    background:rgba(255,255,255,0.04);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    text-align:center;
+
+    line-height:1.9;
+
+    font-size:1.1rem;
+
+    color:#f3e9ef;
+}
+
+@media(max-width:768px){
+
+    .card{
+        padding:40px 25px;
+    }
+
+    .title{
+        font-size:3rem;
+    }
+
+    .poem{
+        font-size:1.15rem;
+    }
+
+    .open-box{
+        width:220px;
+        height:100px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="light1"></div>
+<div class="light2"></div>
+
+<div class="open-box" onclick="openPoem()">
+    <h2>Open</h2>
+</div>
+
+<div class="card" id="poemCard">
+
+    <div class="title">
+        heyy toosha
+    </div>
+
+    <div class="poem">
+
+        <p>
+            she is my world, my beginning and end,<br>
+            my greatest adventure, my very best friend
+        </p>
+
+        <p>
+            the world is a shadow when compared to you<br>
+            the truest of blessings i ever once knew
+        </p>
+
+        <p>
+            pure is the voice that she does own<br>
+            the sweetest comfort that ive ever known
+        </p>
+
+        <p>
+            the moon looks down from up above<br>
+            admiring her with silent love
+        </p>
+
+        <p>
+            the stars all talk as she pass<br>
+            like diamonds falling on a glass
+        </p>
+
+        <p>
+            her walk is just like the midnight air,<br>
+            with silent beauty, pretty and rare
+        </p>
+
+        <p>
+            the night sky is huge and deep<br>
+            a quiet space where angels sleep
+        </p>
+
+        <p>
+            but all its stars would fade from view,<br>
+            the moment my gaze drifts to you.
+        </p>
+
+    </div>
+
+    <div class="note">
+        Every word of this humble poem flew directly from my heart,
+        carrying my love for you. I poured my entire heart into every
+        single letter.<br><br>
+
+        Happy 6 months of loving you.<br>
+        Eid Mubarak my angel, my Rahaf, my everything.
+    </div>
+
+</div>
+
+<script>
+
+function openPoem(){
+
+    document.querySelector(".open-box").style.opacity = "0";
+    document.querySelector(".open-box").style.pointerEvents = "none";
+
+    setTimeout(() => {
+        document.getElementById("poemCard").classList.add("show");
+    }, 400);
+
+}
+
+</script>
+
+</body>
+</html>
